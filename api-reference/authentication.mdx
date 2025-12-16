@@ -1,0 +1,23 @@
+---
+title: "Authentication"
+description: "API keys, scopes, and usage examples."
+---
+
+## Keys
+
+- Environment-specific keys (sandbox vs production)
+- Scoped by role (read-only, write, admin)
+- Rotate regularly; avoid embedding in client code
+
+## Usage
+
+Include the header `Authorization: Bearer <API_KEY>` with every request.
+
+```bash
+curl https://api.sandbox.pilot.markets/v1/blueprints \
+  -H "Authorization: Bearer $PILOT_SANDBOX_KEY"
+```
+
+<Note>
+Webhook signing secrets are separate from API keys.
+</Note>

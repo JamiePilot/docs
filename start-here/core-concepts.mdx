@@ -1,0 +1,32 @@
+---
+title: "Core concepts"
+description: "Glossary-style overview of Pilot's trust and suitability model."
+---
+
+## PilotScore (trust protocol)
+
+PilotScore is a compliance-grade trust protocol and standardized behavioral rating system, like a credit score for trading. It evaluates conduct, consistency, and risk profile using verified trade history, rule adherence, and drift signals.
+
+## Blueprints (tiered strategy definitions)
+
+Blueprints describe a strategy in structured fields (instruments, horizon, risk limits, leverage, stops) and map to tiers that drive suitability. Tiers align the complexity and risk of a strategy to the requirements followers must meet.
+
+## Execution-confirm compliance
+
+Execution-confirm links stated strategy actions to what was actually executed so followers are exposed to what they agreed to. Pilot flags mismatches, records an audit trail, and surfaces remediation workflows.
+
+## Roles in Pilot
+
+| Term | Definition | Where to start |
+| --- | --- | --- |
+| Navigator | Strategy owner creating and publishing Blueprints | [Create a Blueprint](/products/blueprint/create) |
+| Follower | Participant subscribing to a Navigator's strategy | [Blueprint tiers & suitability](/products/blueprint/tiers-suitability) |
+| Platform/Broker | Host environment enforcing suitability and routing execution | [Platform quickstart](/start-here/quickstart-platform) |
+| Regulator/Analyst | Oversight role reviewing risk, conduct, and audit logs | [Oversight dashboard guide](/guides/oversight-dashboard) |
+
+## Concept map
+
+- Understand the signals: [PilotScore overview](/products/pilotscore/overview)
+- Define strategies: [Blueprint overview](/products/blueprint/overview)
+- Operationalize: [Co-Pylot overview](/products/co-pylot/overview)
+- Integrate: [API introduction](/api-reference/introduction)

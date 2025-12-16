@@ -1,0 +1,20 @@
+---
+title: "PilotScore in product decisions"
+description: "Recipes for ranking, gating, and escalations."
+---
+
+## Recipes
+
+- **Top Navigators feed**: rank by PilotScore, then apply Blueprint tier fit and discipline streaks.
+- **Copy-trade caps**: raise max mirror size when score >= band and guardrail adherence is clean.
+- **Follower eligibility**: `eligibility = score >= band && follower.tierAllowance >= blueprint.tier`.
+- **Enhanced review**: route to Co-Pylot when score delta > threshold, locks are overridden, or execution mismatches repeat.
+- **Discovery filters**: hide or warn on strategies whose tier exceeds follower profile.
+
+```js
+const decision = {
+  eligible: pilotScore >= 700 && follower.tierAllowance >= blueprint.tier,
+  actions: ["showWarning", "logAudit"],
+  reason: "Score above 700 and Tier 2 allowed"
+};
+```

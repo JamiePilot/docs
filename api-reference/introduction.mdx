@@ -1,33 +1,20 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "API Introduction"
+description: "Base URLs, auth, and first call."
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## Base URLs
 
-## Welcome
+- Sandbox: `https://api.sandbox.pilot.markets/v1`
+- Production: `https://api.pilot.markets/v1`
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+REST APIs with predictable URLs, standard HTTP verbs, and JSON payloads.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## First call
 
-## Authentication
-
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+```bash
+curl "https://api.sandbox.pilot.markets/v1/navigators" \
+  -H "Authorization: Bearer $PILOT_SANDBOX_KEY"
 ```
+
+See [Authentication](/api-reference/authentication) for key scopes and [Errors](/api-reference/errors) for response formats.

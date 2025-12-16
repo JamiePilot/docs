@@ -1,0 +1,29 @@
+---
+title: "Blueprints"
+description: "Endpoints for creating and managing strategy definitions."
+---
+
+## Create or update
+
+`POST /blueprints`
+
+```json
+{
+  "navigatorId": "nav-demo-001",
+  "name": "Swing strategy (low leverage)",
+  "tier": "Tier 2",
+  "riskConstraints": {"maxLeverage": 1.5}
+}
+```
+
+## Publish
+
+`POST /blueprints/{id}/publish`
+
+## Get a Blueprint
+
+`GET /blueprints/{id}`
+
+## List Blueprints
+
+`GET /blueprints?navigatorId=nav-demo-001`

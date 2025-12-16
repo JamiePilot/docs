@@ -1,0 +1,40 @@
+---
+title: "How PilotScore works"
+description: "Inputs, signals, and scoring cadence for a transparent trading score."
+---
+
+## Inputs
+
+- Verified trading telemetry from connected broker accounts (no manual uploads)
+- Rule adherence from Blueprint guardrails and execution-confirm
+- Strategy declarations from Blueprints (risk appetite, locks, targets)
+- Follower impact (aggregate PnL and drawdown where allowed)
+
+## Signals
+
+- Discipline: stop-loss respect, max-loss compliance, no revenge trading
+- Consistency: variance from declared style, timing, and sizing
+- Community impact: follower outcomes and drawdown, where permissioned
+- Risk profile: leverage, drawdowns, exposure relative to constraints
+
+## Scoring cadence
+
+- Real-time updates on rule adherence and execution-confirm events
+- Batch smoothing across a minimum of 20 trading sessions to avoid fluke swings
+
+## Explainability
+
+Responses return reasons, dimension scores, and versioned models without exposing proprietary weighting.
+
+```json
+{
+  "pilotScore": 748,
+  "dimensions": {
+    "conduct": 760,
+    "consistency": 720,
+    "riskProfile": 765
+  },
+  "reasons": ["Verified 18 months of history", "Exposure within declared limits", "No recent mismatches"],
+  "asOf": "2024-05-18T15:30:00Z"
+}
+```

@@ -1,0 +1,22 @@
+---
+title: "Admin & permissions"
+description: "Roles, least-privilege defaults, and setup steps."
+---
+
+## Roles
+
+| Role | Permissions | Typical users |
+| --- | --- | --- |
+| Admin | Manage org, roles, API keys, webhook destinations | Platform owner |
+| Compliance Reviewer | Approve tiers, overrides, audits, exports | Compliance/Legal |
+| Operations | Configure integrations, run suitability checks, manage followers | Ops/Engineering |
+| Support | View decisions, resend disclosures, file disputes | Support |
+| Read-only | View scores, tiers, and audit logs | Regulators/Analysts |
+
+## Setup steps
+
+1. Create the org and invite users with SSO if available.
+2. Configure roles with least privilege; require MFA for Admins.
+3. Set primary + backup webhook destinations.
+4. Enable audit log exports to your SIEM.
+5. Document override policies and expirations.

@@ -1,0 +1,32 @@
+---
+title: "Errors"
+description: "Schemas, codes, and retry guidance."
+---
+
+## Error schema
+
+```json
+{
+  "error": {
+    "type": "invalid_request",
+    "message": "Missing required field: name",
+    "status": 400,
+    "requestId": "req_123"
+  }
+}
+```
+
+## Common codes
+
+- 400: Invalid input
+- 401: Invalid or missing auth
+- 403: Insufficient scope
+- 404: Not found
+- 409: Conflict (e.g., duplicate externalId)
+- 429: Rate limit exceeded
+- 500: Unexpected error
+
+## Retry guidance
+
+- Retry 429/500 with exponential backoff and idempotency keys.
+- Do not retry 4xx without correcting the request.

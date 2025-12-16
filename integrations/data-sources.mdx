@@ -1,0 +1,15 @@
+---
+title: "Data sources & verification"
+description: "Supported sources and how verification levels work."
+---
+
+| Source | Verification level | Notes |
+| --- | --- | --- |
+| Connected broker APIs | High | OAuth/keys with trade history, balances, positions |
+| Clearing/prime files | High | Reconciled files with timestamps and identifiers |
+| Manual attestations | Medium | Requires periodic refresh and sampling |
+| Simulated data (sandbox) | Low | For testing only; excluded from production scoring |
+
+<Note>
+Verified trade history is critical for trustworthy PilotScore outcomes. Prioritize high-verification sources for production.
+</Note>

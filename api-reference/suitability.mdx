@@ -1,0 +1,28 @@
+---
+title: "Suitability decisions"
+description: "Check follower eligibility and record outcomes."
+---
+
+## Check suitability
+
+`POST /suitability/check`
+
+```json
+{
+  "follower": {
+    "id": "fol-3482",
+    "experience": "intermediate",
+    "acknowledgedRisks": true
+  },
+  "blueprintId": "bp-123",
+  "pilotScore": 705
+}
+```
+
+Response: `allow`, `warn`, or `block` with reasons.
+
+## Record acknowledgement
+
+`POST /suitability/acknowledgements`
+
+Log when followers accept warnings or disclosures.

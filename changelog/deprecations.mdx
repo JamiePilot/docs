@@ -1,0 +1,8 @@
+---
+title: "Deprecations"
+description: "Breaking changes and timelines."
+---
+
+- **`/v1/score` endpoint**: replace with `/pilot-score/{navigatorId}` by 2024-07-01.
+- **Legacy webhook signature header** `X-Pilot-Signature-V1`: remove by 2024-06-15; migrate to `X-Pilot-Signature`.
+- **Sandbox data retention**: auto-purge shortened to 14 days starting 2024-06-01.

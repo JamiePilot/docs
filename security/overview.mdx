@@ -1,0 +1,21 @@
+---
+title: "Security overview"
+description: "Principles, controls, and FAQs."
+---
+
+## Principles
+
+- Least privilege by default across roles and API keys.
+- Encryption in transit (TLS 1.2+) and at rest.
+- Auditability for every suitability-affecting action.
+- Segmented sandbox and production environments.
+
+## Diagram
+
+Data flows from verified sources -> PilotScore processing -> suitability decisions -> audit/export. See [Privacy & data handling](/security/privacy) and [Audit logs](/security/audit-logs) for details.
+
+## FAQ
+
+- **Where is data stored?** Region selection available during onboarding; data stays in-region.
+- **How are keys managed?** API keys scoped by environment; webhook secrets separate from API auth.
+- **Do you support SSO?** Yes, SSO + MFA for admins is recommended.

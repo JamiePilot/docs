@@ -1,0 +1,22 @@
+---
+title: "Execution-confirm compliance"
+description: "Ensure real execution aligns with what followers were promised."
+---
+
+## Concept
+
+Execution-confirm matches stated strategy actions to executed trades. It protects followers by validating that exposure, timing, and size stay within declared parameters.
+
+## Workflow
+
+1. Capture expected actions from the Blueprint or Navigator signal.
+2. Compare to executed fills from connected venues.
+3. Flag mismatches (size, timing, instrument, price bands).
+4. Route to Co-Pylot for review, remediation, or follower notification.
+5. Write an audit log entry and update suitability status if required.
+
+## Audit expectations
+
+- Each mismatch includes timestamps, deltas, and who approved remediation.
+- Repeat mismatches can trigger tier bumps or temporary follower blocks.
+- Followers may receive disclosures when exposure differs from declared rules.

@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Pilot Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0F766E",
+    "light": "#14B8A6",
+    "dark": "#115E59"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -14,35 +14,83 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Start here",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "start-here/whats-new",
+              "start-here/core-concepts",
+              "start-here/quickstart-platform",
+              "start-here/quickstart-navigator",
+              "start-here/environments",
+              "start-here/support"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Products: Blueprint",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "products/blueprint/overview",
+              "products/blueprint/create",
+              "products/blueprint/tiers-suitability",
+              "products/blueprint/execution-confirm",
+              "products/blueprint/examples",
+              "products/blueprint/faq"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Products: Co-Pylot",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "products/co-pylot/overview",
+              "products/co-pylot/workflows",
+              "products/co-pylot/alerts",
+              "products/co-pylot/admin",
+              "products/co-pylot/faq"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Products: PilotScore",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "products/pilotscore/overview",
+              "products/pilotscore/how-it-works",
+              "products/pilotscore/dimensions",
+              "products/pilotscore/interpretation",
+              "products/pilotscore/decisioning",
+              "products/pilotscore/roadmap"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview",
+              "integrations/data-sources",
+              "integrations/webhooks",
+              "integrations/exports"
+            ]
+          },
+          {
+            "group": "Security & compliance",
+            "pages": [
+              "security/overview",
+              "security/privacy",
+              "security/audit-logs",
+              "security/regulatory",
+              "security/responsible-use"
+            ]
+          },
+          {
+            "group": "Guides & recipes",
+            "pages": [
+              "guides/rank-and-gate",
+              "guides/broker-suitability",
+              "guides/oversight-dashboard",
+              "guides/playbooks"
+            ]
+          },
+          {
+            "group": "Troubleshooting & FAQ",
+            "pages": [
+              "troubleshooting/index",
+              "troubleshooting/faq",
+              "resources/glossary"
             ]
           }
         ]
@@ -51,18 +99,36 @@
         "tab": "API reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Getting started",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/introduction",
+              "api-reference/authentication",
+              "api-reference/errors",
+              "api-reference/rate-limits",
+              "api-reference/webhooks"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Resources",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/navigators",
+              "api-reference/blueprints",
+              "api-reference/pilotscore",
+              "api-reference/suitability",
+              "api-reference/audit"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Releases",
+            "pages": [
+              "changelog/index",
+              "changelog/deprecations",
+              "changelog/status"
             ]
           }
         ]
@@ -71,34 +137,24 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Pilot home",
+          "href": "https://pilot.markets",
+          "icon": "globe"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Status",
+          "href": "/changelog/status",
+          "icon": "chart-line"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/pilot.svg",
+    "dark": "/logo/pilot.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    "links": []
   },
   "contextual": {
     "options": [
@@ -112,11 +168,5 @@
      "vscode"
    ]
   },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
-  }
+  "footer": {}
 }

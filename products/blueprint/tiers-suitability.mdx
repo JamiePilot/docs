@@ -1,0 +1,30 @@
+---
+title: "Blueprint tiers & suitability"
+description: "Translate strategy complexity into follower eligibility rules."
+---
+
+## Tiering model
+
+| Tier | Strategy profile | Follower gating |
+| --- | --- | --- |
+| Tier 1 | Low complexity, limited leverage, transparent stops | Identity verified, basic risk acknowledgement |
+| Tier 2 | Moderate leverage, active trading, options overlays | Identity + trading history + drawdown tolerance confirmation |
+| Tier 3 | High complexity or higher-frequency strategies | Prior performance history, enhanced consent, platform-specific approvals |
+
+<Note>
+Tiers map the risk of the strategy to the minimum bar a follower must clear before subscribing.
+</Note>
+
+## Decision flow
+
+1. Evaluate the Blueprint's declared risk constraints.
+2. Assign a tier based on leverage, complexity, and monitoring needs.
+3. Run suitability: compare follower profile + PilotScore to tier requirements.
+4. Gate access: allow, warn, or block with remediation steps.
+5. Log every decision for auditability.
+
+## FAQ
+
+- **How are tiers assigned?** Co-Pylot reviewers map declared risk, instruments, and historical behavior to the tier table above.
+- **What happens when a Blueprint changes?** Tiering re-runs on edits; followers may need to re-acknowledge risks.
+- **Can we override?** Yes-overrides are logged with reason codes and expiry dates.

@@ -1,0 +1,23 @@
+---
+title: "Environments (Sandbox vs Production)"
+description: "Compare behavior, limits, and controls between Pilot sandbox and production."
+---
+
+| Aspect | Sandbox | Production |
+| --- | --- | --- |
+| Access | Free, request keys via support | Provisioned after due diligence |
+| Data | Resettable, simulated fills allowed | Durable, audited, no simulated data |
+| Rate limits | Generous for exploration | Enforced per contract; backoff required |
+| Webhooks | Sent to test endpoints, replayable | Signed events with SLAs and retries |
+| Approvals | Self-serve | Change-managed with Pilot oversight |
+
+<Note>
+Use sandbox for rapid integration and payload validation; production is for verified data and enforced suitability.
+</Note>
+
+## Go-live checklist
+
+- Rotate sandbox keys out of code and store production keys in secrets management.
+- Validate webhook signature verification against production secrets.
+- Confirm audit logging destinations meet your retention requirements.
+- Backfill historical trades for accurate PilotScore baselines.

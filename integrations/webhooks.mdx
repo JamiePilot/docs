@@ -1,0 +1,48 @@
+---
+title: "Webhooks"
+description: "Event catalog, payloads, retries, and signature verification."
+---
+
+## Events
+
+- `score.updated`
+- `blueprint.tier-changed`
+- `suitability.decision`
+- `execution.mismatch`
+- `webhook.retry`
+
+## Handler guidance
+
+- Respond quickly with 2xx; retries use exponential backoff.
+- Process idempotently using the `id` and `X-Pilot-Idempotency` header.
+- Verify signatures with `X-Pilot-Signature` (HMAC SHA-256) and `X-Pilot-Timestamp`.
+
+## Sample payload
+
+```json
+{
+  "id": "evt_01h9c4",
+  "type": "score.updated",
+  "created": "2024-05-18T15:30:00Z",
+  "data": {
+    "navigatorId": "nav-demo-001",
+    "pilotScore": 732,
+    "previousScore": 710,
+    "reasons": ["Drawdown improving", "No recent mismatches"]
+  }
+}
+```
+
+## Signature verification (pseudocode)
+
+```python
+import hmac, hashlib, time
+
+payload = raw_request_body
+signature = headers["X-Pilot-Signature"]
+timestamp = headers["X-Pilot-Timestamp"]
+
+message = f"{timestamp}.{payload}".encode()
+expected = hmac.new(PILOT_WEBHOOK_SECRET.encode(), message, hashlib.sha256).hexdigest()
+assert hmac.compare_digest(signature, expected)
+```

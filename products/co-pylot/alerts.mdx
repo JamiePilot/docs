@@ -1,0 +1,24 @@
+---
+title: "Alerts & monitoring"
+description: "Route events to the right teams with playbooks."
+---
+
+## Events
+
+- `score.updated`: PilotScore changes beyond configured thresholds.
+- `blueprint.rule-violated`: guardrail hit during copy trading.
+- `execution.mismatch`: execution-confirm detected a deviation.
+- `copy.latency`: fills exceeded latency/slippage thresholds.
+- `webhook.retry`: delivery retries after non-2xx responses.
+
+## Routing
+
+- Ops: guardrail triggers, latency spikes, follower caps reached.
+- Compliance: rule violations, overrides expiring, repeated mismatches.
+- Support: follower questions, disclosure updates, and dispute flags.
+
+## Playbooks
+
+- Auto-pause copy when hard locks fire; resume only after acknowledgement.
+- Request verification when score bands fall or latency remains high.
+- Notify Navigators when drift or slippage approaches thresholds.

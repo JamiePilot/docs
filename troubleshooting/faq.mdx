@@ -1,0 +1,16 @@
+---
+title: "FAQ"
+description: "Common troubleshooting questions."
+---
+
+<AccordionGroup>
+  <Accordion title="How do I replay a webhook?">
+    Use the `webhook.retry` event or request a replay from support with the event ID and timeframe.
+  </Accordion>
+  <Accordion title="Why is a follower blocked after being allowed?">
+    Score or tier changes can trigger re-checks. Review recent `score.updated` or `blueprint.tier-changed` events.
+  </Accordion>
+  <Accordion title="Can I test with simulated trades?">
+    Yes in sandbox; simulated data is excluded from production scoring and suitability.
+  </Accordion>
+</AccordionGroup>

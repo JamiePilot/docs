@@ -1,0 +1,11 @@
+---
+title: "Troubleshooting playbooks"
+description: "Symptom -> Cause -> Fix for common operational issues."
+---
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| Webhook retries keep climbing | Handler not returning 2xx or timing out | Respond quickly, process async, verify signature handling |
+| Score drifted unexpectedly | New trades or rule violations | Check reasons field, review execution-confirm logs |
+| Follower blocked unexpectedly | Tier bumped or profile outdated | Refresh profile, review suitability response, adjust overrides |
+| Missing audit entries | Export window too narrow | Expand filters or ensure SIEM sink is connected |

@@ -1,0 +1,18 @@
+---
+title: "PilotScore"
+description: "Endpoints to retrieve scores and histories."
+---
+
+## Get score
+
+`GET /pilot-score/{navigatorId}` or `GET /navigators/{id}/pilot-score`
+
+## Get history
+
+`GET /pilot-score/{navigatorId}/history?limit=50`
+
+Includes timestamps, deltas, and reasons per change.
+
+## Webhooks
+
+Subscribe to `score.updated` for changes without polling.

@@ -1,0 +1,32 @@
+---
+title: "Navigators"
+description: "Endpoints for managing strategy owners and their scores."
+---
+
+## Create a Navigator
+
+`POST /navigators`
+
+```json
+{
+  "externalId": "nav-demo-001",
+  "name": "Avery Quinn",
+  "region": "US"
+}
+```
+
+## Get a Navigator
+
+`GET /navigators/{navigatorId}`
+
+## Retrieve PilotScore
+
+`GET /navigators/{navigatorId}/pilot-score`
+
+Returns score, dimensions, reasons, and timestamps.
+
+## Attach trades
+
+`POST /navigators/{navigatorId}/trades`
+
+Provide verified trades for scoring and execution-confirm.

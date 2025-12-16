@@ -1,0 +1,22 @@
+---
+title: "Privacy & data handling"
+description: "Data inventory, retention, and deletion."
+---
+
+## Data inventory
+
+| Data | Purpose | Retention |
+| --- | --- | --- |
+| Profile metadata | Identify Navigators/followers | Lifecycle of account |
+| Trade history | Scoring, execution-confirm | Contracted retention; purge on request when permitted |
+| Suitability decisions | Evidence for regulators | Minimum 7 years (configurable) |
+| Webhook payloads | Delivery + replay for retries | 14 days |
+
+## Requests
+
+- Data access and deletion requests: `privacy@pilot.markets`
+- Configurable retention windows available per environment.
+
+<Note>
+Suitability decisions often require long retention; coordinate with your counsel before shortening windows.
+</Note>

@@ -1,0 +1,16 @@
+---
+title: "Broker: Suitability workflow"
+description: "Coordinate Platform to Pilot to Broker responsibilities."
+---
+
+## Flow
+
+1. Platform collects follower profile and passes to Pilot for suitability.
+2. Pilot evaluates against Blueprint tier + PilotScore; returns allow/warn/block.
+3. Broker enforces: block orders, require confirmations, or allow with disclosures.
+4. Execution-confirm monitors fills; mismatches trigger re-checks and notifications.
+5. Audit logs capture every action; exports available for exams.
+
+<Note>
+When in doubt, prefer `warn + acknowledgement` over silent blocks to keep users informed.
+</Note>

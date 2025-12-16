@@ -1,0 +1,22 @@
+---
+title: "Interpreting a score"
+description: "Guidance for ranking, gating, and review queues."
+---
+
+## Do
+
+- Use score bands with Blueprint tiers to decide eligibility and copy-trade caps.
+- Combine scores with recent deltas to trigger re-checks and pauses.
+- Share explanation strings with users to keep outcomes transparent.
+
+## Don't
+
+- Do not expose proprietary model weights.
+- Do not gate solely on score without considering declared strategy risk.
+- Do not ignore sudden drops; route them to Co-Pylot for investigation.
+
+## Threshold guide
+
+- **720+**: Eligible for Tier 1-2 with standard acknowledgements; higher copy caps and discovery boosts.
+- **660-719**: Additional verification or warnings for Tier 2; review queues for Tier 3.
+- **&lt;660**: Enhanced review or temporary pause until remediation.

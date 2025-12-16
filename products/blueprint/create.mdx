@@ -1,0 +1,52 @@
+---
+title: "Create a Blueprint"
+description: "Walk through the Blueprint Builder to generate a copy-ready plan with guardrails."
+---
+
+## Prerequisites
+
+- Connected broker (NinjaTrader supported) or linked practice account
+- Clear income/return target and risk appetite
+- Desired payout cadence (fast vs steady)
+
+## Steps
+
+1. **Connect accounts**: link the trading account you want to model and mirror.
+2. **Set goals**: define monthly income or funded-account objectives.
+3. **Choose risk appetite**: Low, Medium, or High to tailor daily targets and locks.
+4. **Pick payout cadence**: fast (bi-weekly) or steady (monthly) withdrawals.
+5. **Generate**: Blueprint Builder produces rules, targets, and position sizing based on history and preferences.
+6. **Review guardrails**: confirm soft/hard loss locks, auto sizing, and stop/TP bands.
+7. **Publish**: control visibility (public summary vs follower detail) and share for Co-Pylot mirroring.
+
+## Field reference
+
+| Field | Description | Example |
+| --- | --- | --- |
+| `name` | Strategy label followers see | `Swing Growth (mid-cap)` |
+| `instruments` | Allowed asset classes/tickers | `EQ:US`, `FUT:ES`, `OPT:SPY` |
+| `incomeTarget` | Monthly or funded-account goal | `$5,000/month` |
+| `riskAppetite` | Low, Medium, High | `Medium` |
+| `payoutCadence` | Fast or steady withdrawals | `Fast (bi-weekly)` |
+| `riskConstraints` | Max leverage, stops, drawdown guardrails | `maxLeverage: 1.5`, `dailyLossHard: -3%` |
+| `visibility` | Summary vs full rule detail | `followers` |
+
+## Example payload
+
+```json
+{
+  "name": "Funded challenge guardrails",
+  "instruments": ["FUT:ES"],
+  "incomeTarget": 5000,
+  "riskAppetite": "medium",
+  "payoutCadence": "fast",
+  "riskConstraints": {
+    "maxLeverage": 1.5,
+    "maxPositionConcentration": 0.15,
+    "dailyLossSoft": -0.02,
+    "dailyLossHard": -0.03,
+    "autoSizing": true
+  },
+  "visibility": "followers"
+}
+```

@@ -1,0 +1,33 @@
+---
+title: "Webhooks (reference)"
+description: "Event schemas, signature verification, retries."
+---
+
+See [Integrations > Webhooks](/integrations/webhooks) for handler patterns. Reference details below.
+
+## Headers
+
+- `X-Pilot-Signature`: HMAC SHA-256 signature
+- `X-Pilot-Timestamp`: Unix timestamp in seconds
+- `X-Pilot-Idempotency`: unique per event delivery
+
+## Retries
+
+Exponential backoff up to 3 attempts; more on request for production incidents.
+
+## Example event schema
+
+```json
+{
+  "id": "evt_01h9c4",
+  "type": "suitability.decision",
+  "created": "2024-05-18T15:30:00Z",
+  "data": {
+    "navigatorId": "nav-demo-001",
+    "followerId": "fol-3482",
+    "decision": "warn",
+    "blueprintTier": "Tier 2",
+    "reasons": ["PilotScore 665", "No options experience on file"]
+  }
+}
+```

@@ -1,0 +1,19 @@
+---
+title: "Platform: Rank & gate Navigators"
+description: "Combine PilotScore and Blueprint tiers for discovery and eligibility."
+---
+
+## Steps
+
+1. Retrieve Navigator PilotScore and tiered Blueprint info.
+2. Compute eligibility: score band + follower profile + tier.
+3. Rank Navigators in discovery using score, recency, and complaint flags.
+4. Gate follow actions with clear warnings and required acknowledgements.
+5. Log every decision with reasons for auditability.
+
+## Pseudocode
+
+```js
+const eligible = pilotScore >= 700 && follower.tierAllowance >= blueprint.tier;
+const uiState = eligible ? "allow" : pilotScore >= 660 ? "warn" : "block";
+```

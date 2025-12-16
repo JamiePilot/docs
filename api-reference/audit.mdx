@@ -1,0 +1,16 @@
+---
+title: "Audit logs"
+description: "Endpoints for retrieving audit events."
+---
+
+## List events
+
+`GET /audit/events?start=...&end=...&type=suitability.decision`
+
+Filter by Navigator, follower, event type, or correlation ID.
+
+## Export bundle
+
+`POST /audit/exports`
+
+Generate regulator-ready bundles with signatures and hashes.

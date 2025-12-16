@@ -1,0 +1,8 @@
+---
+title: "Rate limits"
+description: "Limits, backoff, and headers."
+---
+
+- Default: 100 requests/min per key in sandbox; contracted limits in production.
+- Use the `X-RateLimit-Remaining` and `Retry-After` headers to adjust throughput.
+- Prefer webhooks over polling for score or suitability changes.

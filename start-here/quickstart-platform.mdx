@@ -1,0 +1,57 @@
+---
+title: "Quickstart: Platform integration"
+description: "7 steps to go from sandbox credentials to production-ready suitability enforcement."
+---
+
+## Steps
+
+1. **Get sandbox credentials**: request platform + webhook keys from your Pilot contact or `support@pilot.markets`.
+2. **Create a test Navigator**: `POST /navigators` with basic profile metadata to represent a strategy owner.
+3. **Attach verified trade history**: link a sandbox broker or upload simulated fills using `POST /navigators/{id}/trades`.
+4. **Retrieve PilotScore + risk metrics**: `GET /navigators/{id}/pilot-score` to see current score, dimensions, and reasons.
+5. **Apply Blueprint tier rules**: create or import a Blueprint, then gate followers using `POST /suitability/check`.
+6. **Subscribe to webhooks**: register endpoints for `score.updated`, `blueprint.tier-changed`, and `execution.mismatch` to avoid polling.
+7. **Go live checklist**: lock webhook signing secrets, rotate sandbox keys, enable production endpoints, and backfill audit logging.
+
+## Sample requests
+
+```bash
+curl -X POST https://api.sandbox.pilot.markets/v1/navigators \
+  -H "Authorization: Bearer $PILOT_SANDBOX_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "externalId": "nav-demo-001",
+    "name": "Avery Quinn",
+    "region": "US"
+  }'
+```
+
+```bash
+curl "https://api.sandbox.pilot.markets/v1/navigators/nav-demo-001/pilot-score" \
+  -H "Authorization: Bearer $PILOT_SANDBOX_KEY"
+```
+
+```json
+{
+  "navigatorId": "nav-demo-001",
+  "pilotScore": 732,
+  "dimensions": {
+    "conduct": 740,
+    "consistency": 710,
+    "riskProfile": 725
+  },
+  "tier": "Tier 2",
+  "reasons": [
+    "12 months verified history",
+    "Drawdown within declared risk band",
+    "No unsettled execution mismatches"
+  ]
+}
+```
+
+## What success looks like
+
+- PilotScore responses return for your test Navigator with reasons and dimensions.
+- Suitability checks block ineligible followers based on Blueprint tier rules.
+- Webhooks deliver signed events and your handler responds 2xx with idempotent processing.
+- Audit events record Navigator onboarding, score retrievals, and suitability outcomes.

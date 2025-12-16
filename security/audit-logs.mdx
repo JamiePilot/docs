@@ -1,0 +1,30 @@
+---
+title: "Audit logs"
+description: "Event types, examples, and export options."
+---
+
+## Event types
+
+- Admin: role changes, key rotations, webhook destination updates
+- Suitability: decision outcomes, overrides, follower acknowledgements
+- Scoring: PilotScore retrievals, deltas, and model version stamps
+- Execution-confirm: mismatches, resolutions, and notifications sent
+
+## Sample entry
+
+```json
+{
+  "event": "suitability.decision",
+  "navigatorId": "nav-demo-001",
+  "followerId": "fol-3482",
+  "blueprintTier": "Tier 2",
+  "decision": "warn",
+  "reason": "PilotScore 665 below preferred band",
+  "actor": "system",
+  "timestamp": "2024-05-18T15:35:12Z"
+}
+```
+
+## Exports
+
+Export via `/audit/events` or scheduled deliveries to your SIEM. Include correlation IDs for webhooks to trace end-to-end.

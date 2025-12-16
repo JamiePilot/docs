@@ -1,0 +1,25 @@
+---
+title: "Co-Pylot FAQ"
+description: "Common admin and workflow questions."
+---
+
+<AccordionGroup>
+  <Accordion title="Who can approve a Blueprint?">
+    Compliance Reviewers and Admins can approve; approvals are logged with timestamps and reason codes.
+  </Accordion>
+  <Accordion title="What's logged?">
+    Every suitability decision, override, export, and webhook delivery attempt is captured in the audit log.
+  </Accordion>
+  <Accordion title="How do we export evidence?">
+    Use exports for audit-ready bundles or API access under `/audit/events` with filters for date, Navigator, or follower.
+  </Accordion>
+  <Accordion title="Can we customize alerts?">
+    Yes-configure thresholds per event type and route to teams or tools (email, webhook, incident systems).
+  </Accordion>
+  <Accordion title="Can followers pause copy?">
+    Yes-followers can pause or cap risk anytime; events log the change and resume state.
+  </Accordion>
+  <Accordion title="Do guardrails carry over when copying?">
+    Yes-auto sizing, locks, and stops from the Blueprint stay enforced in Co-Pylot unless an approved override exists.
+  </Accordion>
+</AccordionGroup>
